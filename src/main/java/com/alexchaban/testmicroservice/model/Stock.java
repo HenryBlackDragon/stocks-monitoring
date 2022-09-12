@@ -1,5 +1,10 @@
 package com.alexchaban.testmicroservice.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Value;
+
+@Value
+@AllArgsConstructor
 public class Stock {
 
   String ticker;

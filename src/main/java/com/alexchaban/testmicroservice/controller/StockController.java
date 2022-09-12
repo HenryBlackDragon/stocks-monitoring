@@ -2,10 +2,12 @@ package com.alexchaban.testmicroservice.controller;
 
 import com.alexchaban.testmicroservice.model.Stock;
 import com.alexchaban.testmicroservice.service.StockService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@AllArgsConstructor
+@RestController
+@RequiredArgsConstructor
 public class StockController {
 
   private final StockService stockService;
