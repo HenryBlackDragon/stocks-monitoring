@@ -21,6 +21,7 @@
     <java.version>17</java.version>
     <tinkoff.sdk>0.5.2</tinkoff.sdk>
     <okhttp.version>4.10.0</okhttp.version>
+    <springdoc.version>1.5.12</springdoc.version>
   </properties>
 
   <dependencies>
@@ -47,6 +48,11 @@
       <groupId>com.squareup.okhttp3</groupId>
       <artifactId>okhttp</artifactId>
       <version>${okhttp.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-ui</artifactId>
+      <version>${springdoc.version}</version>
     </dependency>
   </dependencies>
 
