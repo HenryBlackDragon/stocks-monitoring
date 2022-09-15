@@ -1,5 +1,8 @@
 package com.alexchaban.testmicroservice.service;
 
+import com.alexchaban.testmicroservice.dto.FigiesDto;
+import com.alexchaban.testmicroservice.dto.StockPrice;
+import com.alexchaban.testmicroservice.dto.StockPricesDto;
 import com.alexchaban.testmicroservice.dto.StocksDto;
 import com.alexchaban.testmicroservice.dto.TickersDto;
 import com.alexchaban.testmicroservice.exception.StockNotFoundException;
@@ -33,14 +36,8 @@ public class TinkoffStockService implements StockService {
 
     var item = list.get(0);
 
-    return new Stock(
-        item.getTicker(),
-        item.getFigi(),
-        item.getName(),
-        item.getType().getValue(),
-        Currency.valueOf(item.getCurrency().getValue()),
-        "TINKOFF"
-    );
+    return new Stock(item.getTicker(), item.getFigi(), item.getName(), item.getType().getValue(),
+        Currency.valueOf(item.getCurrency().getValue()), "TINKOFF");
   }
 
   @Override
@@ -51,25 +48,27 @@ public class TinkoffStockService implements StockService {
 
     tickers.getTickers()
         .forEach(ticker -> markerInstrument.add(context.searchMarketInstrumentsByTicker(ticker)));
-    final List<Stock> stocks = markerInstrument.stream()
-        .map(CompletableFuture::join)
-        .map(mi -> {
-          if (!mi.getInstruments().isEmpty()) {
-            return mi.getInstruments().get(0);
-          }
-          return null;
-        })
-        .filter(Objects::nonNull)
-        .map(mi -> new Stock(
-            mi.getTicker(),
-            mi.getFigi(),
-            mi.getName(),
-            mi.getType().getValue(),
-            Currency.valueOf(mi.getCurrency().getValue()),
-            "TINKOFF"
-        ))
-        .toList();
+    final List<Stock> stocks = markerInstrument.stream().map(CompletableFuture::join).map(mi -> {
+      if (!mi.getInstruments().isEmpty()) {
+        return mi.getInstruments().get(0);
+      }
+      return null;
+    }).filter(Objects::nonNull).map(
+        mi -> new Stock(mi.getTicker(), mi.getFigi(), mi.getName(), mi.getType().getValue(),
+            Currency.valueOf(mi.getCurrency().getValue()), "TINKOFF")).toList();
 
     return new StocksDto(stocks);
+  }
+
+  @Override
+  public StockPrice getPrice(String figi) {
+    var orderBook = openApi.getMarketContext().getMarketOrderbook(figi, 0).join().get();
+    return new StockPrice(figi, orderBook.getLastPrice().doubleValue());
+  }
+
+  @Override
+  public StockPricesDto getPrices(FigiesDto figies) {
+    var stockPrices = figies.getFigies().stream().map(this::getPrice).toList();
+    return new StockPricesDto(stockPrices);
   }
 }
