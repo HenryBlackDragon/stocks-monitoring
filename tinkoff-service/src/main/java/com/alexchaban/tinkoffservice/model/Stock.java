@@ -1,4 +1,4 @@
-package com.alexchaban.testmicroservice.model;
+package com.alexchaban.tinkoffservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Value;

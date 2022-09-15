@@ -1,4 +1,4 @@
-package com.alexchaban.testmicroservice.config;
+package com.alexchaban.tinkoffservice.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

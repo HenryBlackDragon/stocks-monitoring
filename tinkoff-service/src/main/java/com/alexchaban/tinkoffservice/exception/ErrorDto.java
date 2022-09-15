@@ -1,4 +1,4 @@
-package com.alexchaban.testmicroservice.exception;
+package com.alexchaban.tinkoffservice.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Value;

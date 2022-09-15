@@ -1,4 +1,4 @@
-package com.alexchaban.testmicroservice.dto;
+package com.alexchaban.tinkoffservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Value;

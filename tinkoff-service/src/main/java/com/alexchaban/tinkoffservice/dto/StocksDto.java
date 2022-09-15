@@ -1,6 +1,6 @@
-package com.alexchaban.testmicroservice.dto;
+package com.alexchaban.tinkoffservice.dto;
 
-import com.alexchaban.testmicroservice.model.Stock;
+import com.alexchaban.tinkoffservice.model.Stock;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

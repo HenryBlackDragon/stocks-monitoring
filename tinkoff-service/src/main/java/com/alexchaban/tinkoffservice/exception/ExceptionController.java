@@ -1,4 +1,4 @@
-package com.alexchaban.testmicroservice.exception;
+package com.alexchaban.tinkoffservice.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,11 +1,11 @@
-package com.alexchaban.testmicroservice.controller;
+package com.alexchaban.tinkoffservice.controller;
 
-import com.alexchaban.testmicroservice.dto.FigiesDto;
-import com.alexchaban.testmicroservice.dto.StockPricesDto;
-import com.alexchaban.testmicroservice.dto.StocksDto;
-import com.alexchaban.testmicroservice.dto.TickersDto;
-import com.alexchaban.testmicroservice.model.Stock;
-import com.alexchaban.testmicroservice.service.StockService;
+import com.alexchaban.tinkoffservice.dto.FigiesDto;
+import com.alexchaban.tinkoffservice.dto.StockPricesDto;
+import com.alexchaban.tinkoffservice.dto.StocksDto;
+import com.alexchaban.tinkoffservice.dto.TickersDto;
+import com.alexchaban.tinkoffservice.model.Stock;
+import com.alexchaban.tinkoffservice.service.StockService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,13 +1,13 @@
-package com.alexchaban.testmicroservice.service;
+package com.alexchaban.tinkoffservice.service;
 
-import com.alexchaban.testmicroservice.dto.FigiesDto;
-import com.alexchaban.testmicroservice.dto.StockPrice;
-import com.alexchaban.testmicroservice.dto.StockPricesDto;
-import com.alexchaban.testmicroservice.dto.StocksDto;
-import com.alexchaban.testmicroservice.dto.TickersDto;
-import com.alexchaban.testmicroservice.exception.StockNotFoundException;
-import com.alexchaban.testmicroservice.model.Currency;
-import com.alexchaban.testmicroservice.model.Stock;
+import com.alexchaban.tinkoffservice.dto.FigiesDto;
+import com.alexchaban.tinkoffservice.dto.StockPrice;
+import com.alexchaban.tinkoffservice.dto.StockPricesDto;
+import com.alexchaban.tinkoffservice.dto.StocksDto;
+import com.alexchaban.tinkoffservice.dto.TickersDto;
+import com.alexchaban.tinkoffservice.exception.StockNotFoundException;
+import com.alexchaban.tinkoffservice.model.Currency;
+import com.alexchaban.tinkoffservice.model.Stock;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
